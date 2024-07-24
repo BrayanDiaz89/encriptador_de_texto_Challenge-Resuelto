@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es-co">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/style.css">
+        <title>CryptoVault</title>
+        <link rel="icon" href="./assets/logo_page.png" type="image/x-icon">
+    </head>
+    <body>
+    
+    <header class="header">
+	<nav class="header__menu">
+		<a class="header__menu__logo" href="./index.html"><img src="./assets/alura.png" alt=""></a>
+	</nav>
+    
+    </header>
+	
+    <main class="container"> <!--Clase para contener todo el doc-->
+        <div class="container__contenido">
+            <div class="container__section__inputUser">
+                <textarea placeholder="Digite el texto a encriptar..." id="textoUsuario" class="container__section__texto__input"></textarea>  
+                <p class="container__texto_informativo"><img src="./assets/informativo1.png" alt="">Para encriptar: Ingresa solo letras minúsculas y sin acentos</p>
+                <div class="container__section__inputUser__botones">    
+                    <button onclick="validarYEncriptar()" class="container__section__boton" id="encriptar">
+                    Encriptar
+                    </button>
+                    <button onclick="desencriptarYMostrar()" class="container__section__boton" id="desencriptar" disabled>
+                    Desencriptar
+                    </button>
+	            <button onclick="limpiarTextarea()" class="container__section__boton" id="limpiar">
+                    Limpiar
+                    </button>
+                </div>
+            </div>
+            <div class="container__contenido__texto_Encriptado">
+                <div class="container__contenido__texto_Encriptado__section">
+                    <p class="container__section__texto_encriptado__texto" style="display:none;" id="texto__encriptado">
+                       
+                    </p> 
+                    <img src="./assets/img_encriptado.jpg" alt="" class="container__section__texto_encriptado__img_vacio" id="img__encriptado">
+                    <h2 class="container__section__texto_encriptado__subtitulo" id="subtitulo__encriptado">Ningún mensaje fue encontrado</h2>
+                    <p class="container__section__texto_encriptado__texto" id="texto_encriptado_provicional">Ingresa el texto que desees encriptar o desencriptar.</p>
+		    <div class="container__section__texto_encriptado__cont_boton">
+                    	<button onclick="copiarTextoEncriptado()" style="display:none;" class="container__section__texto_encriptado__boton" id="copiar">
+                    	Copiar
+                    	</button>
+                    </div>	
+		</div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="encriptador.js" defer></script>
+    </body>
+
+<footer class="footer">
+	<p class="footer__texto">
+	Desarrollado por: Ing. Brayan Díaz / Año 2024
+	</p>
+</footer>
+
+</html>
