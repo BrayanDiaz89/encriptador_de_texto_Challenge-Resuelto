@@ -115,7 +115,7 @@ function desencriptarYMostrar() {
     // Verificar si el texto en el textarea contiene alguna de las cadenas encriptadas
     const contieneCadenasEncriptadas = /enter|imes|ai|ober|ufat/.test(textoEncriptado);
     if (!contieneCadenasEncriptadas) {
-        alert("El texto ingresado no parece estar encriptado, corrígelo.");
+        alert("El texto ingresado no está encriptado, corrígelo.");
         return;
     }
 
