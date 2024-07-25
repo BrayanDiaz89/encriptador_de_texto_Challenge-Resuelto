@@ -77,8 +77,31 @@ function copiarTextoEncriptado() {
     // Utilizar el API del portapapeles para copiar el texto
     navigator.clipboard.writeText(textoEncriptado).then(() => {
         alert("Texto copiado al portapapeles");
+        document.getElementById('pegar').removeAttribute('disabled');
     }).catch(err => {
         alert("Hubo un problema al copiar el texto");
+    });
+}
+
+// Función para pegar el texto del portapapeles en el textarea
+function pegarTexto() {
+    // Verificar si el navegador soporta el API del portapapeles
+    if (!navigator.clipboard) {
+        alert("El navegador no soporta la API del portapapeles");
+        return;
+    }
+
+    // Intentar leer el texto del portapapeles
+    navigator.clipboard.readText().then(texto => {
+        // Verificar si hay algo copiado en el portapapeles
+        if (texto === "") {
+            alert("No hay nada copiado en el portapapeles");
+        } else {
+            // Pegar el texto en el textarea con el id textoUsuario
+            document.getElementById("textoUsuario").value = texto;
+        }
+    }).catch(err => {
+        alert("Hubo un problema al pegar el texto: " + err);
     });
 }
 
