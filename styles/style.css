@@ -69,12 +69,13 @@ body {
 
 .__textarea_pegar_button{
     margin:0% 0% 0% 80%;
-    width: 18%;
+    width: auto;
+    justify-content: center !important;
     font-family: var(--fuente-principal);
     font-weight: 400;
     font-size:0.9rem;
     height: 10%;
-    padding: 2% 0% 2% 3%;
+    padding: 2% 0% 2% 0%;
     align-items: center;
     display:flex;
     flex-direction:row;
@@ -268,11 +269,11 @@ body {
     margin:0% 3% 2% 80%;
 }
 .__textarea_pegar_button:disabled{
-    padding:1% 0% 1% 4.3%;
+    padding:1% 0% 1% 0%;
 }
 
 .texto__button__pegar{
-    display: none;
+    display: none !important;
 }
 
 .container__contenido__texto_Encriptado{
@@ -294,6 +295,7 @@ body {
 .footer__texto{
    font-size:0.75rem;
 }
+
 }
 
 @media (max-width: 700px) {
