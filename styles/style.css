@@ -313,8 +313,8 @@ body {
         font-size:0.85rem;
         font-weight: 400;
     }
-    #img__encriptado{
-        display:none;
+    .container__section__texto_encriptado__img_vacio{
+        display:none !important;
     }
 }
 
