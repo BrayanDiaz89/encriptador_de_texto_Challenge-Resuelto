@@ -341,7 +341,6 @@ body {
     justify-content: center;
     align-items: center;
     gap:1.875rem;
-    margin-top:2%;
  }
 
  .footer__contenedor__logo{
@@ -371,6 +370,10 @@ body {
     .container__section__texto_encriptado__img_vacio{
         display:none !important;
     }
+    .footer{
+        height: 7rem;
+    }
+
 }
 
 
