@@ -75,7 +75,7 @@ body {
     font-weight: 400;
     font-size:0.9rem;
     height: 10%;
-    padding: 2% 0% 2% 0%;
+    padding: 2% 0% 0% 0%;
     align-items: center;
     display:flex;
     flex-direction:row;
@@ -227,16 +227,54 @@ body {
 }
 
 .footer{
+   height: 7.5rem;
    width: auto;
    background-color: var(--color-secundario);
    color: var(--color-terciario);
 }
 
-.footer__texto{
+.footer__contenedor__texto{
    padding:1%;
    text-align: center;
    font-family: var(--fuente-principal);
    font-size:1.3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.footer__contenedor{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap:1.875rem;
+}
+
+.footer__contenedor__logo{
+    width: 45px;
+    height: 45px;
+    background-color: rgba(31, 41, 71, 0.9 );
+    line-height: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all .4s ease-in-out;
+}
+
+.footer__contenedor__logo:hover{
+   transform: scale(1.3);
+   background-color: var(--color-primario);
+   box-shadow: 0 0 5px var(--color-primario),
+               0 0 15px var(--color-primario),
+               0 0 25px var(--color-primario),
+               0 0 35px var(--color-primario);
+}
+
+.footer__contendor__texto2{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: var(--fuente-principal);
+    font-size: 1.75rem;
 }
 
 @media (max-width: 1200px) {
@@ -292,8 +330,22 @@ body {
 .footer{
    width:100%;
 }
-.footer__texto{
-   font-size:0.75rem;
+
+.footer__contenedor__texto{
+   font-size:1rem;
+}
+
+.footer__contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1.875rem;
+    margin-top:2%;
+ }
+
+ .footer__contenedor__logo{
+    width: 40px;
+    height: 40px;
 }
 
 }
