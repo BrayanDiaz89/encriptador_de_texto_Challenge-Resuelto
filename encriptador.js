@@ -20,7 +20,6 @@ function limpiarTextarea(){
 function ver_ElementosEncriptacion(){
     document.getElementById('texto__encriptado').style.display = 'block';
     document.getElementById('copiar').style.display = 'block';
-    document.getElementById('desencriptar').removeAttribute('disabled');
 }
 
 function ocultarElementos(){
