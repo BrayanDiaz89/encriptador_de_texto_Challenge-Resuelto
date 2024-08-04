@@ -93,10 +93,16 @@ body {
     font-weight: 600;
 }
 .__textarea_pegar_button:disabled{
-    background-color: var(--color-primario);
+    background-color:var(--color-terciario);
     border:solid 2px var(--color-secundario);
-    color:var(--color-secundario);
-    font-weight:500;
+    color:#898989;
+    font-weight:600;
+    cursor:default;
+}
+
+.__textarea_pegar_button:disabled:hover{
+    background-color:var(--color-terciario);
+    color:#898989;
 }
 
 .container__section__texto__input{
