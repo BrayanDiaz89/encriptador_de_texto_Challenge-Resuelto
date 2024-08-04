@@ -312,7 +312,7 @@ body {
 }
 
 .__textarea_pegar_button{
-    padding:1% 0% 1% 4.3%;
+    padding:1% 0% 1% 0%;
     border:2px solid var(--color-secundario);
     width: 20%;
     margin:0% 3% 2% 80%;
