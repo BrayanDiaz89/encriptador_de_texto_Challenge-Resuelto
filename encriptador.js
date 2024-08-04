@@ -63,6 +63,13 @@ function validarYEncriptar() {
         return;
     }
 
+    // Verificar si el texto contiene al menos una vocal para poder encriptar
+    let contieneVocal = /[eioua]/.test(texto);
+    if (!contieneVocal) {
+        alert("No es posible encriptar el texto, debe tener al menos una vocal.");
+        return;
+    }
+
     // Encriptar el texto y asignarlo al elemento especificado
     let textoEncriptado = encriptarTexto(texto);
     ocultarElementos();
