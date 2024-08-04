@@ -5,7 +5,7 @@
     --color-primario:#fffcf2; /*Fondo page*/
     --color-secundario:#1f2947; /*botones y texto usuario*/
     --color-terciario:#FFF; /*espacio encriptador (fondo)*/
-    --color-rgbaSecundario: rgba(31, 41, 71, 0.8);
+    --color-rgbaSecundario: rgba(31, 41, 71, 0.8); /*color rgba para hover buttons.*/
     /*Font page*/
     --fuente-principal: "Inter", sans-serif;
 }
