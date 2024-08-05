@@ -264,7 +264,7 @@ body {
 .footer__contenedor__logo{
     width: 45px;
     height: 45px;
-    background-color: rgba(31, 41, 71, 0.9 );
+    background-color: var(--color-primario);
     line-height: 40px;
     border-radius: 50%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -274,10 +274,10 @@ body {
 .footer__contenedor__logo:hover{
    transform: scale(1.3);
    background-color: var(--color-primario);
-   box-shadow: 0 0 5px var(--color-primario),
-               0 0 15px var(--color-primario),
-               0 0 25px var(--color-primario),
-               0 0 35px var(--color-primario);
+   box-shadow: 0 0 2px var(--color-primario),
+               0 0 12px var(--color-primario),
+               0 0 22px var(--color-primario),
+               0 0 32px var(--color-primario);
 }
 
 .footer__contendor__texto2{
