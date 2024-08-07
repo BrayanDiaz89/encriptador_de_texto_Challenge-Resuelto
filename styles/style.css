@@ -167,6 +167,7 @@ body {
 }
 
 .container__contenido__texto_Encriptado{
+    margin:50px 0 0;
     border-radius: 24px;
     background-color: var(--color-terciario);
     width:400px;
@@ -343,6 +344,7 @@ body {
 
 .footer__contenedor__texto{
    font-size:1rem;
+   padding: 10px 0;
 }
 
 .footer__contenedor{
@@ -379,10 +381,15 @@ body {
     .container__section__texto_encriptado__img_vacio{
         display:none !important;
     }
-    .footer{
-        height: 5rem;
+    .footer__contenedor__texto{
+        padding: 10px 0;
+        font-size: 1rem;
     }
-
+}
+@media (max-width: 450px){ 
+    .footer__contenedor__texto{
+        font-size: 0.8rem;
+    }
 }
 
 
