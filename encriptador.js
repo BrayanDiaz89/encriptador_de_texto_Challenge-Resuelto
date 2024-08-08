@@ -51,21 +51,21 @@ function validarYEncriptar() {
 
     // Verificar si el textarea está vacío
     if (texto.trim() === "") {
-        alert("Campo vacío. Ingrese un texto a encriptar.");
+        swal('Encriptar texto','Campo vacío. Ingrese un texto a encriptar.', 'warning');
         return;
     }
 
     // Verificar si hay mayúsculas o caracteres especiales
     let regex = /^[a-z0-9\s]+$/;
     if (!regex.test(texto)) {
-        alert("El texto contiene mayúsculas o caracteres especiales. Por favor, corríjalo.");
+        swal('Encriptar texto','El texto contiene mayúsculas o caracteres especiales. Por favor, corríjalo.', 'error');
         return;
     }
 
     // Verificar si el texto contiene al menos una vocal para poder encriptar
     let contieneVocal = /[eioua]/.test(texto);
     if (!contieneVocal) {
-        alert("No es posible encriptar el texto, debe tener al menos una vocal.");
+        swal('Encriptar texto','No es posible encriptar el texto, debe tener al menos una vocal.', 'warning');
         return;
     }
 
@@ -82,10 +82,10 @@ function copiarTextoEncriptado() {
 
     // Utilizar el API del portapapeles para copiar el texto
     navigator.clipboard.writeText(textoEncriptado).then(() => {
-        alert("Texto copiado al portapapeles");
+        swal('Copiar texto','Texto copiado al portapapeles', 'success');
         document.getElementById('pegar').removeAttribute('disabled');
     }).catch(err => {
-        alert("Hubo un problema al copiar el texto");
+        swal('Copiar texto','Hubo un problema al copiar el texto', 'error');
     });
 }
 
@@ -93,7 +93,7 @@ function copiarTextoEncriptado() {
 function pegarTexto() {
     // Verificar si el navegador soporta el API del portapapeles
     if (!navigator.clipboard) {
-        alert("El navegador no soporta la API del portapapeles");
+        swal('Pegar texto','El navegador no soporta la API del portapapeles', 'error');
         return;
     }
 
@@ -101,13 +101,13 @@ function pegarTexto() {
     navigator.clipboard.readText().then(texto => {
         // Verificar si hay algo copiado en el portapapeles
         if (texto === "") {
-            alert("No hay nada copiado en el portapapeles");
+            swal('Pegar texto','No hay nada copiado en el portapapeles','warning');
         } else {
             // Pegar el texto en el textarea con el id textoUsuario
             document.getElementById("textoUsuario").value = texto;
         }
     }).catch(err => {
-        alert("Hubo un problema al pegar el texto: " + err);
+        swal('Pegar texto', 'Hubo un problema al pegar el texto: ', 'error' + err);
     });
 }
 
@@ -137,14 +137,21 @@ function desencriptarYMostrar() {
 
     // Verificar si el textarea está vacío
     if (textoEncriptado === "") {
-        alert("Campo vacío. Por favor, escriba algo o encripte un texto.");
+        swal('Desencriptar texto', 'Campo vacío. Por favor, escriba algo o encripte un texto.', 'warning');
+        return;
+    }
+
+    // Verificar si hay mayúsculas o caracteres especiales
+    let regex = /^[a-z0-9\s]+$/;
+    if (!regex.test(textoEncriptado)) {
+        swal('Desencriptar texto','El texto contiene mayúsculas o caracteres especiales. Por favor, corríjalo.', 'error');
         return;
     }
 
     // Verificar si el texto en el textarea contiene alguna de las cadenas encriptadas
     const contieneCadenasEncriptadas = /enter|imes|ai|ober|ufat/.test(textoEncriptado);
     if (!contieneCadenasEncriptadas) {
-        alert("El texto ingresado no está encriptado, corrígelo.");
+        swal('Desencriptar texto', 'El texto ingresado no está encriptado, corrígelo.', 'warning');
         return;
     }
 
@@ -157,7 +164,7 @@ function desencriptarYMostrar() {
         asignarTextoElemento("#texto__encriptado", textoDesencriptado);
 
     } catch (error) {
-        alert("Error al desencriptar el texto: " + error.message); // Mostrar detalle del error
+        swal('Desencriptar texto', 'Error al desencriptar el texto: ', 'error' + error.message); // Mostrar detalle del error
     }
 }
 
